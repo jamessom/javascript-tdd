@@ -1,0 +1,10 @@
+version: '3'
+services:
+  ved-projeto01:
+    container_name: ved-projeto01
+    hostname: ved-projeto01
+    build: ./projeto01
+    volumes:
+      - ./projeto01:/app
+    ports:
+      - "9001:9001"
