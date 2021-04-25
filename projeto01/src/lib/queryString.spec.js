@@ -1,4 +1,4 @@
-const { queryString } = require('./queryString');
+const { queryString, parser } = require('./queryString');
 
 describe('Object to queryString', () => {
   it('should create a valid query string when an object is provided', () => {
@@ -46,5 +46,24 @@ describe('Object to queryString', () => {
         families: [],
       });
     }).not.toThrowError();
+  });
+});
+
+describe('', () => {
+  it('should convert a query string to object', () => {
+    const qs = 'name=Jamessom&surname=Queiroz';
+
+    expect(parser(qs)).toEqual({
+      name: 'Jamessom',
+      surname: 'Queiroz',
+    });
+  });
+
+  it('should convert a query string of a single key-value pair to object', () => {
+    const qs = 'name=Jamessom';
+
+    expect(parser(qs)).toEqual({
+      name: 'Jamessom',
+    });
   });
 });
