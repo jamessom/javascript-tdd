@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "coverage": "yarn test -- --coverage"
   },
   "keywords": [],
   "author": "Jamessom Queiroz <jamessomqueiroz@gmail.com>",
