@@ -66,4 +66,14 @@ describe('', () => {
       name: 'Jamessom',
     });
   });
+
+  it('should convert a query string to object takin care of comma separated values', () => {
+    const qs = 'name=Jamessom&surname=Queiroz&families=Queiroz,Chaves,Ribeiro';
+
+    expect(parser(qs)).toEqual({
+      name: 'Jamessom',
+      surname: 'Queiroz',
+      families: ['Queiroz', 'Chaves', 'Ribeiro'],
+    });
+  });
 });
