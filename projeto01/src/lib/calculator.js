@@ -1,4 +1,4 @@
-module.exports.sum = (paramOne, paramTwo) => {
+export function sum(paramOne, paramTwo) {
   const firstNumber = parseInt(paramOne, 10);
   const secondNumber = parseInt(paramTwo, 10);
 
@@ -7,15 +7,15 @@ module.exports.sum = (paramOne, paramTwo) => {
   }
 
   return firstNumber + secondNumber;
-};
+}
 
-module.exports.subtract = (paramOne, paramTwo) => {
+export function subtract(paramOne, paramTwo) {
   const firstNumber = parseInt(paramOne);
   const secondNumber = parseInt(paramTwo);
 
-  if(Number.isNaN(firstNumber) || Number.isNaN(secondNumber)) {
+  if (Number.isNaN(firstNumber) || Number.isNaN(secondNumber)) {
     throw Error('Params must be a number.');
   }
 
   return firstNumber - secondNumber;
-};
+}
